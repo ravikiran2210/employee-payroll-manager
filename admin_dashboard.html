@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <h1 class="title">Admin Dashboard</h1>
+                <div class="admin-options">
+                    <a class="admin-option" href="/register_employee">Register Employee</a>
+                    <a class="admin-option" href="/view_employees">View Employees</a>
+                    <a class="admin-option" href="/calculate_salary">Calculate Salary</a>
+                    <a class="admin-option" href="/generate_pay_slip_admin">Generate Pay Slip</a>
+                    <a class="admin-option" href="/logout">Logout</a>
+                </div>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

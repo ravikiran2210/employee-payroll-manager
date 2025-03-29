@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Pay Slip</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            padding: 0;
+            margin: 0;
+            font-family: Raleway, sans-serif;
+        }
+        body {
+            background: linear-gradient(90deg, #C7C5F4, #776BCC);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .screen {
+            background: linear-gradient(90deg, #5D54A4, #7C78B8);
+            position: relative;
+            height: auto;
+            width: 360px;
+            box-shadow: 0px 0px 24px #5C5696;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 20px;
+        }
+        .screen__content {
+            z-index: 1;
+            position: relative;
+            width: 100%;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: 700;
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login__field {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .login__input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-bottom: 2px solid #D1D1D4;
+            background: none;
+            font-weight: 700;
+            transition: .2s;
+        }
+        .login__input:focus,
+        .login__input:hover {
+            outline: none;
+            border-bottom-color: #6A679E;
+        }
+        .login__submit {
+            width: 100%;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #fff;
+            border: 1px solid #D4D3E8;
+            border-radius: 26px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #4C489D;
+            cursor: pointer;
+            transition: .2s;
+        }
+        .login__submit:hover {
+            border-color: #6A679E;
+        }
+        .screen__background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+        }
+        .screen__background__shape {
+            transform: rotate(45deg);
+            position: absolute;
+        }
+        .screen__background__shape1 {
+            height: 520px;
+            width: 520px;
+            background: #FFF;
+            top: -50px;
+            right: 120px;
+            border-radius: 0 72px 0 0;
+        }
+        .screen__background__shape2 {
+            height: 220px;
+            width: 220px;
+            background: #6C63AC;
+            top: -172px;
+            right: 0;
+            border-radius: 32px;
+        }
+        .screen__background__shape3 {
+            height: 540px;
+            width: 190px;
+            background: linear-gradient(270deg, #5D54A4, #6A679E);
+            top: -24px;
+            right: 0;
+            border-radius: 32px;
+        }
+        .screen__background__shape4 {
+            height: 400px;
+            width: 200px;
+            background: #7E7BB9;
+            top: 420px;
+            right: 50px;
+            border-radius: 60px;
+        }
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #fff;
+            border: 1px solid #D4D3E8;
+            border-radius: 26px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #4C489D;
+            text-decoration: none;
+            transition: .2s;
+            width: 100%;
+            text-align: center;  /* Ensures the text is centered */
+        }
+        .back-link:hover {
+            border-color: #6A679E;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="screen">
+            <div class="screen__content">
+                <h1 class="title">Generate Pay Slip</h1>
+                <form method="post" action="/generate_pay_slip_admin">
+                    <div class="login__field">
+                        <input type="number" name="emp_id" class="login__input" placeholder="Employee ID" required>
+                    </div>
+                    <div class="login__field">
+                        <input type="text" name="month" class="login__input" placeholder="Month" required>
+                    </div>
+                    <div class="login__field">
+                        <input type="number" name="year" class="login__input" placeholder="Year" required>
+                    </div>
+                    <button type="submit" class="login__submit">Generate</button>
+                </form><a class="back-link" href="/admin/dashboard">Back to Dashboard</a>
+            </div>
+            <div class="screen__background">
+                <span class="screen__background__shape screen__background__shape4"></span>
+                <span class="screen__background__shape screen__background__shape3"></span>
+                <span class="screen__background__shape screen__background__shape2"></span>
+                <span class="screen__background__shape screen__background__shape1"></span>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
+
